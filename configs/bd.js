@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose(); //Importação do sqlite3
-const db = new sqlite3.Database('database.db'); //Instância do banco de dados
+const db = new sqlite3.Database('configs/database.db'); //Instância do banco de dados
 
 //Executa as instruções em fila
 db.serialize(() => {
