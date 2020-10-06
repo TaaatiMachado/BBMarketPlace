@@ -1,8 +1,22 @@
-const express = require('express'); //Bibioteca express
-const app = express(); //Servidor
-const port = process.env.PORT || 3000; //Porta
+const sqlite = require('sqlite3').verbose();
+// const db = new sqlite.Database('srcconfigs/');
+const express = require('express'); //Biblioteca express
+const app = express();
 
-//Tomada do servidor
-app.listen(port, () =>{
-    console.log("Servidor funcionando na porta " + port);
-});
+
+//Rotas
+
+//lista todoas as tarefas 
+
+app.get("/", (req, resp) => {
+    resp.send("TESTANDO ROTA");
+})
+
+
+
+
+app.listen(8080, () => {
+    console.log(`Servidor iniciado com sucesso`);
+
+})
+
