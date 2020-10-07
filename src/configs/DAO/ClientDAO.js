@@ -1,11 +1,16 @@
 class ClientDAO{
     constructor(db){
         this._db = db;
+        this._getClients = 'SELECT * FROM CLIENTS';
+        this._getClientById = 'SELECT * FROM CLIENTS WHERE id_client = ?'
+        this._insertClient = 'INSERT INTO CLIENTS (name, email, password, cpf, phone, address) VALUES (?,?,?,?,?,?)'
+        this._modifyClient = 'UPDATE CLIENTS SET name = ?, email = ?, password = ?, cpf = ?, phone = ?, address = ? WHERE id_client = ?'
+        this._deleteClient = 'DELETE FROM CLIENTS WHERE id_client = ?'
     }
 
     getClients(){
         return new Promise((resolve, reject)=>{
-            this._db.all('SELECT * FROM CLIENTS', (err, rows)=>{
+            this._db.all(this._getClients, (err, rows)=>{
                 if(err){
                     reject(`Error getting clients: ${err}`)
                 }
@@ -16,7 +21,7 @@ class ClientDAO{
 
     getClientById(){
         return new Promise((resolve, reject)=>{
-            this._db.all('SELECT * FROM CLIENTS WHERE id_client = ?', [id_client], (err, rows)=>{
+            this._db.all(this._getClientById, [id_client], (err, rows)=>{
                 if(err){
                     reject(`Error getting client: ${err}`)
                 }
@@ -28,10 +33,9 @@ class ClientDAO{
     insertClient(req){
         const {name, email, password, cpf, phone, address} = req.body;
         return new Promise((resolve, reject)=>{
-            this._db.run('INSERT INTO CLIENTS (name, email, password, cpf, phone, address) VALUES (?,?,?,?,?,?)', 
-                        [name, email, password, cpf, phone, address], (err)=>{
+            this._db.run(this._insertClient, [name, email, password, cpf, phone, address], (err)=>{
                 if(err){
-                    reject(`Error inserting clients: ${err}`)
+                    reject(`Error inserting client: ${err}`)
                 }
                     resolve('Success!')
             })
@@ -41,8 +45,7 @@ class ClientDAO{
     modifyClient(req){
         const {id_client, name, email, password, cpf, phone, address} = req.body;
         return new Promise((resolve, reject)=>{
-            this._db.run('UPDATE CLIENTS SET name = ?, email = ?, password = ?, cpf = ?, phone = ?, address = ? WHERE id_client = ?', 
-                        [name, email, password, cpf, phone, address, id_client], (err)=>{
+            this._db.run(this._modifyClient, [name, email, password, cpf, phone, address, id_client], (err)=>{
                 if(err){
                     reject(`Error modfying client: ${err}`)
                 }
@@ -54,7 +57,7 @@ class ClientDAO{
     deleteClient(req){
         const {id_client} = req.body;
         return new Promise((resolve, reject)=>{
-            this._db.run('DELETE FROM CLIENTS WHERE id_client = ?', [id_client], (err)=>{
+            this._db.run(this._deleteClient, [id_client], (err)=>{
                 if(err){
                     reject(`Error deleting client: ${err}`)
                 }
