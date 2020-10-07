@@ -19,7 +19,8 @@ class ClientDAO{
         })
     }
 
-    getClientById(){
+    getClientById(req){
+        const {id_client} = req.body;
         return new Promise((resolve, reject)=>{
             this._db.all(this._getClientById, [id_client], (err, rows)=>{
                 if(err){
