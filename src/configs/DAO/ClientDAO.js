@@ -16,9 +16,9 @@ class ClientDAO{
 
     getClientById(){
         return new Promise((resolve, reject)=>{
-            this._db.all('SELECT * FROM CLIENTS WHERE id_client = ?', [req.body.id_client], (err, rows)=>{
+            this._db.all('SELECT * FROM CLIENTS WHERE id_client = ?', [id_client], (err, rows)=>{
                 if(err){
-                    reject(`Error getting clients: ${err}`)
+                    reject(`Error getting client: ${err}`)
                 }
                     resolve(rows)
             })
@@ -26,34 +26,39 @@ class ClientDAO{
     }
 
     insertClient(req){
+        const {name, email, password, cpf, phone, address} = req.body;
         return new Promise((resolve, reject)=>{
-            this._db.run('INSERT INTO CLIENTS (name, email, password, cpf, phone, address) VALUES (?,?,?,?,?,?)', [req.body.name, req.body.email, req.body.password, req.body.cpf, req.body.phone, req.body.address], (err)=>{
+            this._db.run('INSERT INTO CLIENTS (name, email, password, cpf, phone, address) VALUES (?,?,?,?,?,?)', 
+                        [name, email, password, cpf, phone, address], (err)=>{
                 if(err){
-                    reject(`Error getting clients: ${err}`)
+                    reject(`Error inserting clients: ${err}`)
                 }
-                    resolve('Adicionado com sucesso!')
+                    resolve('Success!')
             })
         })
     }
 
     modifyClient(req){
+        const {id_client, name, email, password, cpf, phone, address} = req.body;
         return new Promise((resolve, reject)=>{
-            this._db.run('UPDATE CLIENTS SET name = ?, email = ?, password = ?, cpf = ?, phone = ?, address = ? WHERE id_client = ?', [req.body.name, req.body.email, req.body.password, req.body.cpf, req.body.phone, req.body.address, req.body.id], (err)=>{
+            this._db.run('UPDATE CLIENTS SET name = ?, email = ?, password = ?, cpf = ?, phone = ?, address = ? WHERE id_client = ?', 
+                        [name, email, password, cpf, phone, address, id_client], (err)=>{
                 if(err){
-                    reject(`Error getting clients: ${err}`)
+                    reject(`Error modfying client: ${err}`)
                 }
-                    resolve('Adicionado com sucesso!')
+                    resolve('Success!')
             })
         })
     }
 
     deleteClient(req){
+        const {id_client} = req.body;
         return new Promise((resolve, reject)=>{
-            this._db.run('DELETE FROM CLIENTS WHERE id_client = ?', [req.body.id], (err)=>{
+            this._db.run('DELETE FROM CLIENTS WHERE id_client = ?', [id_client], (err)=>{
                 if(err){
-                    reject(`Error deleting clients: ${err}`)
+                    reject(`Error deleting client: ${err}`)
                 }
-                    resolve('Deletado com sucesso!')
+                    resolve('Success!')
             })
         })
     }
