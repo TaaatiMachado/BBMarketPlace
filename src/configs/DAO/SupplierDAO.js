@@ -67,3 +67,5 @@ class SupplierDAO{
         })
     }
 }
+
+module.exports = SupplierDAO;
