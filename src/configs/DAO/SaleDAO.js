@@ -67,3 +67,5 @@ class SaleDAO{
         })
     }
 }
+
+module.exports = SaleDAO;

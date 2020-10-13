@@ -67,3 +67,5 @@ class ClientDAO{
         })
     }
 }
+
+module.exports = ClientDAO;

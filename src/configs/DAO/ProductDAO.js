@@ -65,6 +65,7 @@ class ProductDAO{
             })
         })
     }
+    
     deleteProduct(req){
         const {id_product} = req.body;
         return new Promise((resolve, reject)=>{
@@ -77,3 +78,5 @@ class ProductDAO{
         })
     }
 }
+
+module.exports = ProductDAO;
