@@ -1,22 +1,23 @@
-const sqlite = require('sqlite3').verbose();
-// const db = new sqlite.Database('srcconfigs/');
-const express = require('express'); //Biblioteca express
+const express = require('express'); 
 const app = express();
+const routesClient = require('./src/routes/routesclient.js')
+const routesProduct = require('./src/routes/routesproduct.js')
+const routessales = require('./src/routes/routessale.js')
+const routessupplier = require('./src/routes/routessale.js')
+const bodyParser = require('body-parser')
 
+routesClient(app)
+routesProduct(app)
+routessales(app)
+routessupplier(app)
 
-//Rotas
-
-//lista todoas as tarefas 
-
-app.get("/", (req, resp) => {
-    resp.send("TESTANDO ROTA");
-})
-
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
 app.listen(8080, () => {
     console.log(`Servidor iniciado com sucesso`);
 
-})
+});
 
+module.exports = app;
