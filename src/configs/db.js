@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('../configs/database.db');
+const db = new sqlite3.Database('./src/configs/database.db');
 
 
 process.on('SIGINT', () =>

@@ -1,13 +1,12 @@
-function newUser(user) {
-    
+function newUser(produto, clientes) {
     let cardUser = '';
     let cardProd = '';
- 
-    cardUser = 
+    clientes.forEach(cliente=>{
+      cardUser += 
     `<div class="card m-5 p-3" style="width: 18rem;">
-        <img src="${user.img}" class="card-img-top profile-pic" alt="...">
+        <img src="${cliente.img}" class="card-img-top profile-pic" alt="...">
         <div class="card-body">
-            <h5 class="card-title">${user.nome}</h5>
+            <h5 class="card-title">${cliente.name}</h5>
             <p class="card-text">Bem-vindo(a)!</p>
         </div>
         <ul class="list-group list-group-flush">
@@ -18,20 +17,22 @@ function newUser(user) {
             <a href="#" class="card-link">Logout</a>
             <a href="#" class="card-link">Configs</a>
         </div>
-    </div>`;
+    </div>`
+    })
+    
 
     produto.forEach (produto => {
         
         cardProd +=   
-        `<div class="card m-5 p-3" style="width: 13rem;" data-id-produto="${produto.id_produto}">
+        `<div class="card m-5 p-3" style="width: 13rem;" data-id-produto="${produto.id_product}">
         <img src="${produto.img}" class="card-img-top">
         <div class="card-body">
-          <h5 class="card-title">${produto.nome}</h5>
+          <h5 class="card-title">${produto.name}</h5>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">${produto.desc}</li>
-          <li class="list-group-item">${produto.aval}</li>
-          <li class="list-group-item">${produto.valor}</li>
+          <li class="list-group-item">${produto.description}</li>
+          <li class="list-group-item">${produto.evaluation}</li>
+          <li class="list-group-item">${produto.price}</li>
         </ul>
         <div class="card-body d-flex flex-row justify-content-around">
             <a href="#" class="btn banana-btn mr-2">COMPRAR</a>
@@ -50,14 +51,14 @@ function newUser(user) {
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/IMG_3522.PNG">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/basicStyle.css">
+        <link rel="stylesheet" href="/estatico/assets/css/basicStyle.css">
         <title>Banana Banana Marketplace</title>
     </head>
     <body>
         <!-- NAVBAR -->
         <nav class="navbar navbar-dark nav-color d-flex flex-row justify-content-center">
             <a class="navbar-brand" href="#">
-              <img src="assets/img/IMG_3524.PNG" width="150" class="d-inline-block align-top" loading="lazy">
+              <img src="/estatico/assets/img/IMG_3524.PNG" width="150" class="d-inline-block align-top" loading="lazy">
             </a>
           </nav>
     <main class="d-flex justify-content-around">

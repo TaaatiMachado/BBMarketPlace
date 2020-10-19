@@ -5,12 +5,14 @@
   "main": "servidor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node servidor.js"
+    "start": "nodemon servidor.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "nodemon": "^2.0.5",
     "sqlite": "^4.0.15",
     "sqlite3": "^5.0.0"
   }

@@ -21,7 +21,8 @@ const PRODUCTS = `
         description TEXT,
         price REAL,
         quantity INTEGER,
-        id_provider INTEGER
+        id_provider INTEGER,
+        img VARCHAR(255)
     )
 `;
 
@@ -75,12 +76,13 @@ const ADD_PRODUCTS = `
         description,
         price,
         quantity,
-        id_provider
+        id_provider,
+        img
     )
     VALUES 
-        ('Bom', 'Fone de ouvido', 'Fone de ouvido sem fio', '100,00', '1', '000001'),
-        ('Otimo', 'Iphone X pro ', 'Smartphone', '4000,00', '1', '000023'),
-        ('Perfeito', 'Mi band5', 'Pulseira', '191,20', '1', '000032')
+        ('Bom', 'Fone de ouvido', 'Fone de ouvido sem fio', '100,00', '1', '000001', 'https://images-na.ssl-images-amazon.com/images/I/51sLvHGBuyL._AC_SL1000_.jpg'),
+        ('Otimo', 'Iphone X pro ', 'Smartphone', '4000,00', '1', '000023', 'https://shopfacil.vteximg.com.br/arquivos/ids/67148405/6010339_1.jpg?v=637384789008170000'),
+        ('Perfeito', 'Mi band5', 'Pulseira', '191,20', '1', '000032', 'https://http2.mlstatic.com/D_NQ_NP_2X_916576-MLB42841651546_072020-F.webp')
 
 
 `;
