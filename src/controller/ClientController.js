@@ -1,21 +1,63 @@
 const ClientDAO = require('../configs/DAO/ClientDAO'); 
+const ProductDAO = require('../configs/DAO/ProductDAO'); 
+const db = require('../configs/db')
+const login = require('../view/login')
+const newUser = require('../view/user')
+const clientesView = require('../view/clients')
 
 class ClientController {
-    constructor(db) {
-        this.clientDAO = new ClientDAO(db);
+    
+    static loggedClient(){
+        return (req, resp) =>{
+            const clientDAO = new ClientDAO(db);
+            clientDAO.getClients()
+            .then((clients)=> {
+                
+                clients.forEach(element => {
+
+                    if (element.email == req.body.email && element.password == req.body.password ){
+                        
+                        const productDAO = new ProductDAO(db);
+                        productDAO.getProducts()
+                        .then((products)=> {
+                            clientDAO.getClientByEmail(req.body.email)
+                            .then(cliente=>{
+                                resp.send(newUser(products, cliente));
+                            })
+                            
+                        })
+                        .catch((err) => {console.log(err)});
+                    }
+                    
+                });
+            })
+            .catch((err) => {console.log(err)});
+        }
     }
 
-    listClients() {
+    static loginClient(){
         return (req, resp) => {
-            this.clientDAO.getClients()
+            const clientDAO = new ClientDAO(db);
+            clientDAO.getClients()
             .then((clients)=> {
-                resp.send(console.log(clients));
+                resp.send(login());
             })
             .catch((err) => {console.log(err)});
         }
     };
 
-    listClientsId() {
+    static listClients(){
+        return (req, resp) => {
+            const clientDAO = new ClientDAO(db);
+            clientDAO.getClients()
+            .then((clients)=> {
+                resp.send(clientesView(clients));
+            })
+            .catch((err) => {console.log(err)});
+        }
+    };
+
+    static listClientsId() {
         return (req, resp) => {
             this.clientDAO.getClientById(req)
             .then((clients) => {
@@ -25,35 +67,39 @@ class ClientController {
         }
     };
 
-    addClients() {
+    static addClients() {
         return (req, resp) => {
-            this.clientDAO.insertClient(req)
+            const clientDAO = new ClientDAO(db);
+            clientDAO.insertClient(req)
             .then((clients)=>{
-                resp.send(console.log(clients));
+                resp.redirect('/clients')
             })
             .catch((err) => {console.log(err)});
         }
     }
 
-    updateClients() {
+    static updateClients() {
         return (req, resp) => {
-            this.clientDAO.modifyClient(req)
+            const clientDAO = new ClientDAO(db);
+            clientDAO.modifyClient(req)
             .then((clients) => {
-                resp.send(console.log(clients));
+                resp.redirect('/clients')
             })
             .catch((err) => {console.log(err)});
         }
     }
 
-    deleteClients() {
+    static deleteClients() {
         return (req, resp) => {
-            this.clientDAO.deleteClient(req)
-            .then((clients) => {
-                resp.send(console.log(clients));
+            console.log(req.body.idCliente)
+            const clientDAO = new ClientDAO(db);
+            clientDAO.deleteClient(req.body.idCliente)
+            .then((response) => {
+                resp.redirect('/clients')
             })
             .catch((err) => {console.log(err)});
         }
     }
-};
+}
 
 module.exports = ClientController;

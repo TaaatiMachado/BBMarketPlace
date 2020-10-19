@@ -1,21 +1,17 @@
 const ProductDAO = require('../configs/DAO/ProductDAO'); 
+const db = require('../configs/db')
+const newUser = require('../view/user')
 
 class ProductController {
-    constructor(db) {
-        this.productDAO = new ProductDAO(db);
-    }
 
-    listProducts() {
+    static listProducts() {
         return (req, resp) => {
-            this.productDAO.getProducts()
-            .then((products)=> {
-                resp.send(console.log(products));
-            })
-            .catch((err) => {console.log(err)});
+            console.log(req.body)
+            
         }
     };
 
-    listProductsSuplier() {
+    /* listProductsSuplier() {
         return (req, resp) => {
             this.productDAO.getProductsBySupplier()
             .then((products) => {
@@ -63,7 +59,7 @@ class ProductController {
             })
             .catch((err) => {console.log(err)});
         }
-    };
+    }; */
 }
 
 module.exports = ProductController;
