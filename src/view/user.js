@@ -3,8 +3,8 @@ function newUser(produto, clientes) {
     let cardProd = '';
     clientes.forEach(cliente=>{
       cardUser += 
-    `<div class="card m-5 p-3" style="width: 18rem;">
-        <img src="/estatico/assets/img/IMG_3520.PNG" class="card-img-top profile-pic" alt="...">
+    `<div class="card m-5 p-3 align-self-baseline" style="width: 18rem;">
+        <img src="/estatico/assets/img/IMG_3520.PNG" class="card-img-top profile-pic" alt="..." >>
         <div class="card-body">
             <h5 class="card-title">${cliente.name}</h5>
             <p class="card-text">Bem-vindo(a)!</p>
@@ -24,8 +24,8 @@ function newUser(produto, clientes) {
     produto.forEach (produto => {
         
         cardProd +=   
-        `<div class="card m-5 p-3" style="width: 13rem;" data-id-produto="${produto.id_product}">
-        <img src="${produto.img}" class="card-img-top">
+        `<div class="card m-5 p-3 justify-content-around" style="width: 13rem;" data-id-produto="${produto.id_product}">
+        <img src="${produto.img}" class="card-img-top" style="height: 12.4rem; width: auto;">>
         <div class="card-body">
           <h5 class="card-title">${produto.name}</h5>
         </div>
@@ -34,9 +34,9 @@ function newUser(produto, clientes) {
           <li class="list-group-item">${produto.evaluation}</li>
           <li class="list-group-item">${produto.price}</li>
         </ul>
-        <div class="card-body d-flex flex-row justify-content-around">
-            <a href="#" class="btn banana-btn mr-2">COMPRAR</a>
-            <a href="#" class="btn banana-btn"> ♥ </a>
+        <div class="card-body d-flex flex-row justify-content-around ">
+            <a href="#" class="btn banana-btn mr-2 align-self-end">COMPRAR</a>
+            <a href="#" class="btn banana-btn align-self-end"> ♥ </a>
         </div>
         </div>`
     
@@ -61,7 +61,7 @@ function newUser(produto, clientes) {
               <img src="/estatico/assets/img/IMG_3524.PNG" width="150" class="d-inline-block align-top" loading="lazy">
             </a>
           </nav>
-    <main class="d-flex justify-content-around">
+    <main class="d-flex justify-content-around ">
     
       <!--USER-->
       <!--Aqui entra o card de perfil do usuário-->
@@ -69,7 +69,7 @@ function newUser(produto, clientes) {
         ${cardUser}
     
       <!--PRODUTOS-->
-      <div class="card m-5 d-flex flex-row">
+      <div class="card m-5 d-flex flex-row flex-wrap justify-content-around">
         <!--Aqui entram os cards de produtos-->
 
         ${cardProd}
