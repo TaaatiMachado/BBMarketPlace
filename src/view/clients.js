@@ -6,7 +6,7 @@ const clientesView = (clientes)=>{
         `
         
         <div class="card m-5 p-3" style="width: 18rem;">
-            <img src="${cliente.img}" class="card-img-top profile-pic" alt="...">
+            <img src="/estatico/assets/img/IMG_3520.PNG" class="card-img-top profile-pic">
             <div class="card-body">
                 <h5 class="card-title">${cliente.name}</h5>
             </div>
@@ -19,9 +19,9 @@ const clientesView = (clientes)=>{
                 <li class="list-group-item">Address: ${cliente.address}</li>
             </ul>
             <div class="card-body">
-                <input type="button" name="editarCliente" class="card-link" value="Editar" data-toggle="modal" data-target="#modalEdit${cliente.id_client}" />
+                <input type="button" name="editarCliente" class="card-link btn-lg btn-block banana-btn"" value="Editar" data-toggle="modal" data-target="#modalEdit${cliente.id_client}" />
                 <!-- Modal Editar -->
-            <div class="modal fade" id="modalEdit${cliente.id_client}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="modalEdit${cliente.id_client}" tabindex="-1" role="dialog" aria-labelledby="modalClienteTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                 <div class="modal-header text-center">
@@ -83,7 +83,7 @@ const clientesView = (clientes)=>{
                 <form id="deletarCliente" action="" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="idCliente" value="${cliente.id_client}" />
-                    <input type="submit" class="card-link" value="Remover" />
+                    <input type="submit" class="card-link btn-lg btn-block banana-btn" value="Remover" />
                 </form>
                 
             </div>
@@ -118,14 +118,16 @@ const clientesView = (clientes)=>{
             </a>
           </nav>
     <main class="d-flex flex-column">
-    <section id="search" class="d-flex">
+    <section id="search" class="d-flex flex-column align-items-center">
+        <div class="card d-flex flex-column justify-content-around m-4">            
+            <input type="number" class="m-4" id="searchById" name="searchById" placeholder="Insira o id" />
+            <input type="submit" class="btn-lg banana-btn m-4" value="Buscar" />
+        </div>
+        <input type="button" value="Adicionar Cliente" data-toggle="modal" data-target="#modalCliente" class=" btn-lg banana-btn m-4" />
 
-        <div class="align-self-start"">
-            
-            <input type="button" value="Adicionar Cliente" data-toggle="modal" data-target="#exampleModalCenter" />
- 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+        <!-- Modal -->
+            <div class="modal fade" id="modalCliente" tabindex="-1" role="dialog" aria-labelledby="modalClienteTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                 <div class="modal-header text-center">
@@ -174,20 +176,14 @@ const clientesView = (clientes)=>{
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                    <button type="submit" class="btn-lg btn-block banana-btn">Adicionar</button>
+                    <button type="button" class="btn-lg btn-block" data-dismiss="modal">Fechar</button>
                 </div>
                 </form>
                 </div>
             </div>
             </div>
 
-        </div>
-
-        <div style="margin: 0 30%;">
-            <input type="number" id="searchById" name="searchById" placeholder="Insira o id desejado" />
-            <input type="submit" value="Buscar" />
-        </div>
     </section>
     <section class="main d-flex justify-content-around">
     <!--USER-->

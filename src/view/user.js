@@ -4,7 +4,7 @@ function newUser(produto, clientes) {
     clientes.forEach(cliente=>{
       cardUser += 
     `<div class="card m-5 p-3" style="width: 18rem;">
-        <img src="${cliente.img}" class="card-img-top profile-pic" alt="...">
+        <img src="/estatico/assets/img/IMG_3520.PNG" class="card-img-top profile-pic" alt="...">
         <div class="card-body">
             <h5 class="card-title">${cliente.name}</h5>
             <p class="card-text">Bem-vindo(a)!</p>
