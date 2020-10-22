@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const routesClient = require('./src/routes/routesclient.js')
 const routesProduct = require('./src/routes/routesproduct.js')
-//const routessales = require('./src/routes/routessale.js')
+const routessales = require('./src/routes/routessale.js')
 const routessupplier = require('./src/routes/routessupplier.js')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
@@ -23,7 +23,7 @@ app.use(methodOverride(function (req, res) {
 routesClient(app)
  
 routesProduct(app)
-//routessales(app)
+routessales(app)
 routessupplier(app)
 
 

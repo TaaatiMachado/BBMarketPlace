@@ -34,7 +34,7 @@ class SaleDAO{
     getSalesByUserId(req){
         const {id_client} = req.body;
         return new Promise((resolve, reject)=>{
-            this._db.all(this._getSalesById, [id_client], (err, rows)=>{
+            this._db.all(this._getSalesByUserId, [id_client], (err, rows)=>{
                 if(err){
                     reject(`Error getting sales: ${err}`)
                 }

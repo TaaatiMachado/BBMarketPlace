@@ -1,60 +1,64 @@
-/* const SaleDAO = require('../configs/DAO/SaleDAO');
 const SaleDAO = require('../configs/DAO/SaleDAO');
+const db = require('../configs/db')
+const salesView = require('../view/sales')
 
 class SaleController {
-    constructor(db){
-        this.saleDAO = new SaleDAO(db);
-    }
 
-    listSale(){
+    static listSale(){
         return (req, resp) => {
-            this.saleDAO.getSales()
+            const saleDAO = new SaleDAO(db)
+            saleDAO.getSales()
             .then((sales) => {
-                resp.send(console.log(sales));
-            })
-            .catch((err) => {console.log(err)});
-        }
-    };
-
-    listSaleProductId() {
-        return (req, resp) => {
-            this.saleDAO.getSalesByProductId(req)
-            .then((sales) => {
-                resp.send(console.log(console.log(sales)));
-            })
-            .catch((err) => {console.log(err)});
-        }
-    };
-
-    listSaleUserId() {
-        return (req, resp) => {
-            this.saleDAO.getSalesByUserId(req)
-            .then((sales) => {
-                resp.send(console.log(console.log(sales)));
+                resp.send(salesView(sales));
             })
             .catch((err) => {console.log(err)});
         }
     };
     
-    addSale() {
+        static listSaleProductId() {
         return (req, resp) => {
-            this.saleDAO.insertSale(req)
+            const saleDAO = new SaleDAO(db)
+            saleDAO.getSalesByProductId(req)
+            .then((sales) => {
+                resp.send(salesView(sales));
+            })
+            .catch((err) => {console.log(err)});
+        }
+    };
+    
+        static listSaleUserId() {
+        return (req, resp) => {
+            const saleDAO = new SaleDAO(db)
+            saleDAO.getSalesByUserId(req)
+            .then((sales) => {
+                resp.send(salesView(sales));
+            })
+            .catch((err) => {console.log(err)});
+        }
+    };
+    
+        static addSale() {
+        return (req, resp) => {
+            const saleDAO = new SaleDAO(db)
+            saleDAO.insertSale(req)
             .then(() => {
-                resp.send(console.log("Success to insert a new Sale!"));
+                resp.redirect('/sales');
             })
             .catch((err) => {console.log(err)});
         }
     }
-
-    deleteSale() {
+    
+        static deleteSale() {
         return (req, resp) => {
-            this.saleDAO.deleteSale(req)
+            const saleDAO = new SaleDAO(db)
+            saleDAO.deleteSale(req)
             .then(() => {
-                resp.send(console.log("Success to delete!"));
+                resp.redirect('/sales');
             })
             .catch((err) => {console.log(err)});
         }
     }
+    
 }
 
-module.exports = SaleController; */
+module.exports = SaleController; 

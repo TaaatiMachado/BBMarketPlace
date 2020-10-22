@@ -1,16 +1,16 @@
-/* 
+
 const SaleController = require('../controller/SaleController');
 
 module.exports = (app) =>{ 
 
-    app.get('/clients', SaleController.listSale()); 
-    
-    app.get('/clients/:id', SaleController.listSaleProductId());
+    app.get('/sales', (SaleController.listSale())); 
 
-    app.post('/clients/add', SaleController.listSaleUserId());
+    app.post('/sales/add', SaleController.addSale());
 
-    app.put('/clients/:id', SaleController.addSale());
+    app.post('/products/sales', SaleController.listSaleProductId());
 
-    app.delete('/clients/:id', SaleController.deleteSale());
+    app.post('/clients/sales', SaleController.listSaleUserId());
+
+    app.delete('/sales', SaleController.deleteSale());
  
-} */
+} 
