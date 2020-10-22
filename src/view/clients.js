@@ -120,8 +120,10 @@ const clientesView = (clientes)=>{
     <main class="d-flex flex-column">
     <section id="search" class="d-flex flex-column align-items-center">
         <div class="card d-flex flex-column justify-content-around m-4">            
-            <input type="number" class="m-4" id="searchById" name="searchById" placeholder="Insira o id" />
+            <form action="/clients/id" method="POST">
+            <input type="number" class="m-4" id="searchById" name="id_client" placeholder="Insira o id" />
             <input type="submit" class="btn-lg banana-btn m-4" value="Buscar" />
+            </form>
         </div>
         <input type="button" value="Adicionar Cliente" data-toggle="modal" data-target="#modalCliente" class=" btn-lg banana-btn m-4" />
 

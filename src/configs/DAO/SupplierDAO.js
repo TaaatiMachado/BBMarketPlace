@@ -4,7 +4,7 @@ class SupplierDAO{
         this._selectProviders = 'SELECT * FROM PROVIDERS';
         this._selectProvider = 'SELECT * FROM PROVIDERS WHERE id = ?';
         this._insertSupplier = 'INSERT INTO PROVIDERS (name, phone, company_name, eni, address) VALUES (?,?,?,?,?)';
-        this._modifySupplier = 'UPDATE PROVIDERS SET name = ?, phone = ?, company_name = ?, eni = ?, adress = ? WHERE id = ?';
+        this._modifySupplier = 'UPDATE PROVIDERS SET name = ?, phone = ?, company_name = ?, eni = ?, address = ? WHERE id = ?';
         this._deleteSupplier = 'DELETE FROM PROVIDERS WHERE id = ?'
     }
 

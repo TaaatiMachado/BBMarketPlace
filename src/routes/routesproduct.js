@@ -5,12 +5,13 @@ module.exports = (app) =>{
 
     app.get('/products', ProductController.listProducts()); 
     
-    /* app.get('/products/:id', ProductController.listProductsSuplier());
+    app.get('/products/suppliers', ProductController.listSupplier())
+    app.post('/products/suppliers', ProductController.listProductsSuplier())
 
     app.post('/products/add', ProductController.addProducts());
 
-    app.put('/products/:id', ProductController.updateProducts());
+    app.put('/products/update', ProductController.updateProducts());
 
-    app.delete('/products/:id', ProductController.deleteProducts()); */
+    app.delete('/products', ProductController.deleteProducts())
  
 }

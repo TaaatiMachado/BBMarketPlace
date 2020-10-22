@@ -1,26 +1,67 @@
-const ProductDAO = require('../configs/DAO/ProductDAO'); 
+const ProductDAO = require('../configs/DAO/ProductDAO');
+const SupplierDAO = require('../configs/DAO/SupplierDAO'); 
 const db = require('../configs/db')
 const newUser = require('../view/user')
+const produtosView = require('../view/products')
+const produtosSupplierView = require('../view/productsSupplier')
 
 class ProductController {
 
-    static listProducts() {
+    static listSupplier() {
         return (req, resp) => {
-            console.log(req.body)
+            const supplierDAO = new SupplierDAO(db);
+            supplierDAO.getSuppliers()
+            .then((suppliers)=> {
+                resp.send(produtosSupplierView(suppliers));
+            })
+            .catch((err) => {console.log(err)});
+
             
         }
     };
 
-    /* listProductsSuplier() {
+    /* const productDAO = new ProductDAO(db);
+            productDAO.getProductsBySupplier(req)
+            .then(response=>{
+                console.log(response)
+            }) */
+
+    /* const supplierDAO = new SupplierDAO(db);
+            supplierDAO.getSuppliers()
+            .then((suppliers)=> {
+                resp.send(produtosSupplierView(suppliers));
+            })
+            .catch((err) => {console.log(err)});
+        } */
+    
+    static listProducts() {
         return (req, resp) => {
-            this.productDAO.getProductsBySupplier()
+            const productDAO = new ProductDAO(db);
+            productDAO.getProducts()
+            .then((products)=> { 
+                resp.send(produtosView(products));
+            })
+            .catch((err) => {console.log(err)});
+        }
+    };
+
+    static listProductsSuplier() {
+        return (req, resp) => {
+            const productDAO = new ProductDAO(db);
+            productDAO.getProductsBySupplier(req)
             .then((products) => {
-                resp.send(console.log(products));
+                //console.log(products)
+                resp.send(produtosView(products));
+                /* const supplierDAO = new SupplierDAO(db);
+                supplierDAO.getSuppliers()
+                .then((suppliers)=>{
+                    resp.send(produtosSupplierView(suppliers, products));
+                }) */
             })
             .catch((err) => {console.log(err)});
         }
     }
-
+/*
     listProductSuplier() {
         return (req, resp) => {
             this.productDAO.getProductsBySupplier(req)
@@ -30,36 +71,42 @@ class ProductController {
             .catch((err) => {console.log(err)});
         }
     };
-
-    addProducts() {
+    */
+    static addProducts() {
         return (req, resp) => {
-            this.productDAO.insertProduct(req)
+            console.log(req.body)
+            const productDAO = new ProductDAO(db);
+            productDAO.insertProduct(req)
             .then((products) => {
-                resp.send(console.log(products));
+
+                resp.redirect('/products')
             })
             .catch((err) => {console.log(err)});
         }
     };
-
-    updateProducts() {
+    
+    static updateProducts() {
         return (req, resp) => {
-            this.productDAO.modifyProduct(req)
+            console.log(req.body)
+            const productDAO = new ProductDAO(db);
+            productDAO.modifyProduct(req)
             .then((products) => {
-                resp.send(console.log(products));
+                resp.redirect('/products');
             })
             .catch((err) => {console.log(err)});
         }
     };
-
-    deleteProducts() {
+    
+    static deleteProducts() {
         return (req, resp) => {
-            this.productDAO.deleteProduct(req)
-            .then((products) => {
-                resp.send(console.log(products));
+            const productDAO = new ProductDAO(db);
+            productDAO.deleteProduct(req)
+            .then((response) => {
+                resp.redirect('/products')
             })
             .catch((err) => {console.log(err)});
         }
-    }; */
+    };
 }
 
 module.exports = ProductController;

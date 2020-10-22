@@ -59,9 +59,10 @@ class ClientController {
 
     static listClientsId() {
         return (req, resp) => {
-            this.clientDAO.getClientById(req)
+            const clientDAO = new ClientDAO(db);
+            clientDAO.getClientById(req)
             .then((clients) => {
-                resp.send(console.log(clients));
+                resp.send(clientesView(clients));
             })
             .catch((err) => {console.log(err)});
         }

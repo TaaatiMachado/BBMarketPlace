@@ -1,4 +1,4 @@
-const SaleDAO = require('../configs/DAO/SaleDAO');
+/* const SaleDAO = require('../configs/DAO/SaleDAO');
 const SaleDAO = require('../configs/DAO/SaleDAO');
 
 class SaleController {
@@ -57,4 +57,4 @@ class SaleController {
     }
 }
 
-module.exports = SaleController;
+module.exports = SaleController; */

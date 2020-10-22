@@ -1,16 +1,16 @@
 
-const SupplierController = require('../controller/SaleController');
+const SupplierController = require('../controller/SupplierController');
 
 module.exports = (app) =>{ 
 
-    app.get('/clients', SupplierController.listSupplier()); 
+    app.get('/suppliers', SupplierController.listSupplier()); 
     
-    app.get('/clients/:id', SupplierController.listSupplierId());
+    app.post('/suppliers/id', SupplierController.listSupplierId());
 
-    app.post('/clients/add', SupplierController.addSupplier());
+    app.post('/suppliers/add', SupplierController.addSupplier());
 
-    app.put('/clients/:id', SupplierController.updateSupplier());
+    app.put('/suppliers/update', SupplierController.updateSupplier());
 
-    app.delete('/clients/:id', SupplierController.deleteSupplier());
+    app.delete('/suppliers', SupplierController.deleteSupplier());
  
 }

@@ -1,4 +1,4 @@
-
+/* 
 const SaleController = require('../controller/SaleController');
 
 module.exports = (app) =>{ 
@@ -13,4 +13,4 @@ module.exports = (app) =>{
 
     app.delete('/clients/:id', SaleController.deleteSale());
  
-}
+} */

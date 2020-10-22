@@ -1,55 +1,59 @@
 const SupplierDAO = require('../configs/DAO/SupplierDAO');
+const db = require('../configs/db')
+const fornecedoresView = require('../view/supplier')
 
 class SupplierController {
-    constructor(db) {
-        this.supplierDAO = new SupplierDAO(db);
-    }
-
-    listSupplier() {
+   
+    static listSupplier() {
         return (req, resp) => {
-            this.supplierDAO.getSuppliers()
+            const supplierDAO = new SupplierDAO(db)
+            supplierDAO.getSuppliers()
             .then((suppliers) => {
-                resp.send(console.log(suppliers));
+                resp.send(fornecedoresView(suppliers));
             })
             .catch((err) => {console.log(err)});
         }
     };
 
-    listSupplierId() {
+    static listSupplierId() {
         return (req, resp) => {
-            this.supplierDAO.getSupplierById(req)
+            const supplierDAO = new SupplierDAO(db)
+            supplierDAO.getSupplierById(req)
             .then((suppliers) => {
-                resp.send(console.log(suppliers));
+                resp.send(fornecedoresView(suppliers));
             })
             .catch((err) => {console.log(err)});
         }
     };
 
-    addSupplier() {
+    static addSupplier() {
         return (req, resp) => {
-            this.supplierDAO.insertSupplier(req)
+            const supplierDAO = new SupplierDAO(db)
+            supplierDAO.insertSupplier(req)
             .then(() => {
-                resp.send(console.log("Successfully added!"));
+                resp.redirect('/suppliers');
             })
             .catch((err) => {console.log(err)});
         }
     };
-
-    updateSupplier() {
+    
+    static updateSupplier() {
         return (req, resp) => {
-            this.supplierDAO.modifySupplier(req)
+            const supplierDAO = new SupplierDAO(db)
+            supplierDAO.modifySupplier(req)
             .then(() => {
-                resp.send(console.log("Successfully updated!"));
+                resp.redirect('/suppliers');
             })
             .catch((err) => {console.log(err)});
         }
     };
-
-    deleteSupplier() {
+    
+    static deleteSupplier() {
         return (req, resp) => {
-            this.supplierDAO.deleteSupplier(req)
+            const supplierDAO = new SupplierDAO(db)
+            supplierDAO.deleteSupplier(req)
             .then(() => {
-                resp.send(console.log("Successfully deleted!"));
+                resp.redirect('/suppliers');
             })
             .catch((err) => {console.log(err)});
         }
