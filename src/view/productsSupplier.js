@@ -134,7 +134,7 @@ const produtosSupplierView = (fornecedores)=>{
 
             <label for="searchById">Escolha um Fornecedor: </label>
 
-            <select id="searchById" name="id">
+            <select id="searchById" name="id_provider">
             <option value="teste">Selecione um fornecedor</option>
                 ${cardProviders}
                 
