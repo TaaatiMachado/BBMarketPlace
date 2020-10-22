@@ -19,20 +19,6 @@ class ProductController {
             
         }
     };
-
-    /* const productDAO = new ProductDAO(db);
-            productDAO.getProductsBySupplier(req)
-            .then(response=>{
-                console.log(response)
-            }) */
-
-    /* const supplierDAO = new SupplierDAO(db);
-            supplierDAO.getSuppliers()
-            .then((suppliers)=> {
-                resp.send(produtosSupplierView(suppliers));
-            })
-            .catch((err) => {console.log(err)});
-        } */
     
     static listProducts() {
         return (req, resp) => {
@@ -52,26 +38,23 @@ class ProductController {
             .then((products) => {
                 //console.log(products)
                 resp.send(produtosView(products));
-                /* const supplierDAO = new SupplierDAO(db);
-                supplierDAO.getSuppliers()
-                .then((suppliers)=>{
-                    resp.send(produtosSupplierView(suppliers, products));
-                }) */
+                
             })
             .catch((err) => {console.log(err)});
         }
     }
-/*
-    listProductSuplier() {
+
+        static listProductSuplier() {
         return (req, resp) => {
-            this.productDAO.getProductsBySupplier(req)
+            const productDAO = new ProductDAO(db);
+            productDAO.getProductBySupplier(req)
             .then((product) => {
-                resp.send(console.log(product));
+                resp.send(produtosView(product));
             })
             .catch((err) => {console.log(err)});
         }
     };
-    */
+    
     static addProducts() {
         return (req, resp) => {
             console.log(req.body)

@@ -3,7 +3,7 @@ class ProductDAO{
         this._db = db;
         this._getProducts = 'SELECT * FROM PRODUCTS';
         this._getProductsBySupplier = "SELECT * FROM PRODUCTS WHERE id_provider = ?"
-        this._getProductBySupplier = 'SELECT * FROM PRODUCTS INNER JOIN PROVIDERS ON id_provider = id WHERE id_product = ?'
+        this._getProductBySupplier = 'SELECT * FROM PRODUCTS WHERE id_product = ? AND id_provider = ?'
         this._insertProduct = 'INSERT INTO PRODUCTS (evaluation, name, description, price, quantity, id_provider, img) VALUES (?,?,?,?,?,?,?)';
         this._modifyProduct = 'UPDATE PRODUCTS SET evaluation = ?, name = ?, description = ?, price = ?, quantity = ?, id_provider = ?, img = ? WHERE id_product = ?';
         this._deleteProduct = 'DELETE FROM PRODUCTS WHERE id_PRODUCT = ?'
@@ -21,9 +21,9 @@ class ProductDAO{
     }
 
     getProductsBySupplier(req){
-        const {id} = req.body;
+        const {id_provider} = req.body;
         return new Promise((resolve, reject)=>{
-            this._db.all(this._getProductsBySupplier, [id], (err, rows)=>{
+            this._db.all(this._getProductsBySupplier, [id_provider], (err, rows)=>{
                 if(err){
                     reject(`Error getting products: ${err}`)
                 }
@@ -39,13 +39,17 @@ class ProductDAO{
     }
 
     getProductBySupplier(req){
-        const {id_product} = req.body;
+        const {id_product, id_provider} = req.body;
         return new Promise((resolve, reject)=>{
-            this._db.all(this._getProductBySupplier, [id_product], (err, rows)=>{
+            this._db.all(this._getProductBySupplier, [id_product, id_provider], (err, rows)=>{
                 if(err){
                     reject(`Error getting products: ${err}`)
                 }
-                    resolve(rows)
+                    if(rows.length >0){
+                        resolve(rows)
+                    }else{
+                        resolve('Não foram encontrados registros')
+                    }
             })
         })
     }

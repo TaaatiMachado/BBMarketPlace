@@ -176,12 +176,39 @@ const produtosView = (produtos)=>{
               </nav>
         <main class="d-flex flex-column">
         <section id="search" class="d-flex flex-column align-items-center">
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Id do Produto</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#supplier" role="tab" aria-controls="supplier" aria-selected="false">Id do Fornecedor</a>
+            </li>
+        
+        </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="card d-flex flex-column justify-content-around m-4">            
-                <form action="/clients/id" method="POST">
-                <input type="number" class="m-4" id="searchById" name="id_client" placeholder="Insira o id" />
+                <form action="/products/suppliers" method="POST">
+                <input type="number" class="m-4" id="searchById" name="id_provider" placeholder="Insira o id do produto" />
                 <input type="submit" class="btn-lg banana-btn m-4" value="Buscar" />
                 </form>
             </div>
+        </div>
+
+        <div class="tab-pane fade" id="supplier" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="card d-flex flex-column justify-content-around m-4">            
+                <form action="/products/id/supplier" method="POST">
+                    <input type="number" class="m-4" id="searchById" name="id_product" placeholder="Insira o id do produto" />
+                    <input type="number" class="m-4" id="searchById" name="id_provider" placeholder="Insira o id do fornecedor" />
+                    <input type="submit" class="btn-lg banana-btn m-4" value="Buscar" />
+                </form>
+            </div>
+        </div>
+        
+      </div>
+
+            
             <input type="button" value="Adicionar Produto" data-toggle="modal" data-target="#modalCliente" class=" btn-lg banana-btn m-4" />
     
     
@@ -257,8 +284,7 @@ const produtosView = (produtos)=>{
           ${cardProdutos}
       
         </section>
-        
-          
+         
         </main>
         
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
