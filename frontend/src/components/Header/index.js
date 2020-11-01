@@ -8,6 +8,7 @@ import logo from '../../assets/img/IMG_3524.PNG'
 import Dropdown from 'react-bootstrap/Dropdown';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge'
 import './style.css'
 
 
@@ -24,7 +25,7 @@ export default function Header() {
           </Nav.Link>
         </Nav.Item>
         <div className="menu">
-          <Button variant="outline-light" className="btn-mkt"><MdShoppingBasket size={30} color="#fff"/></Button>
+          <Button variant="outline-light" className="btn-mkt"><MdShoppingBasket size={30} color="#fff"/> <Badge variant="danger">9</Badge></Button>
           <Dropdown>
             <Dropdown.Toggle className="login btn-mkt" id="dropdown-basic">
             <MdAccountBox size={30} color="#fff"/>
