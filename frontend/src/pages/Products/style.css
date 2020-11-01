@@ -1,0 +1,9 @@
+.prod {
+    width: '15rem';
+    margin-right: 10px;
+}
+
+.buy-btn {
+    background-color: #350065 !important;
+    border: none !important;
+}

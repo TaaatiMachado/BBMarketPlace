@@ -5,12 +5,12 @@ import HomeCarousel from '../../components/carrousel/carrousel'
 export default function Home() {
     return (
     <div>
-      <img src={Banner} alt="banner"></img>
-      <h2>DESTAQUES</h2>
+      <img className="banner" src={Banner} alt="banner"></img>
+      <h2 className='titulo-sec'>DESTAQUES</h2>
       <HomeCarousel/>
-      <h2>MAIS VENDIDOS</h2>
+      <h2 className='titulo-sec'>MAIS VENDIDOS</h2>
       <HomeCarousel/>
-      <h2>ÚLTIMAS VISUALIZAÇÕES</h2>
+      <h2 className='titulo-sec'>ÚLTIMAS VISUALIZAÇÕES</h2>
       <HomeCarousel/>
     </div>
 )};

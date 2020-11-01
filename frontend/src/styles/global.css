@@ -1,6 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
 
-export default createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -12,31 +10,22 @@ export default createGlobalStyle`
 }
 
 body {
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
-h2 {
+.titulo-sec {
     margin: 25px 120px ;
     font-family: Poppins, sans-serif;
     color: #350065;
 
 }
 
-img {
+.banner {
     width: 100%;
     padding: 0.8% 5%;
 }
 
-body, input, button {
-    font: Roboto, 14px sans-serif;
-}
-
-
-button{ 
-
-    cursor: pointer;
-}
 
 .control-dots{
     display: none;
@@ -59,14 +48,13 @@ button{
 
 .carousel.carousel-slider .control-arrow {
     border-radius: 500px;
-    margin: 10% 10%;
     place-items: center;
-    background: #350065;
+    background: #350065 !important;
 
 }
 
 .carousel.carousel-slider .control-arrow:hover{
-    background: #350065;
+    background: #350065 !important;
 
 }
 
@@ -74,4 +62,3 @@ button{
     align-items: center;
     justify-content: center;
 }
-`

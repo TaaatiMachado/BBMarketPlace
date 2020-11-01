@@ -1,0 +1,55 @@
+
+.navBar {
+display:flex;
+justify-content: space-between;
+align-items: center;
+background-color: #350065;
+width: 100%;
+padding: 0 45px;
+}
+
+.navLogo {
+    background-color: #350065 !important;
+    margin-left: 45px;
+
+}
+
+.logo {
+    width:190px;
+}
+
+.login {
+    border-color: #fff !important;
+    border: 8px ;
+    border-radius: 5px;
+    text-decoration: none !important;
+    background-color: #350065 !important;
+}
+
+.menu{
+display:flex;
+align-items: center;
+}
+
+.btn-mkt {
+    margin-right: 10px;
+}
+
+.btn-mkt:hover {
+    background-color: #f3e436 !important;
+}
+
+strong { 
+    display: block;
+    color: #f3e436;
+
+}
+
+span{
+    font-size: 13px;
+    color: #f3e436;
+
+}
+
+
+
