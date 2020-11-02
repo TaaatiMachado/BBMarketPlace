@@ -1,0 +1,61 @@
+.card-body {
+    width: 90%;
+    display: flex;
+    flex-direction: row !important;
+}
+
+
+div h3 {
+    margin: 1% 5%;
+}
+
+.cad-btn {
+    background-color: #350065 !important;
+    border: none !important;
+    width: 25%;
+}
+
+.prod-card{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row !important;
+    padding: 2%;
+    margin-right: 15px;
+    width: 75% !important;
+}
+
+.prod-img {
+    width: 25rem !important;
+}
+
+.fcont{
+    margin-top: 1rem;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+}
+
+.buy-card{
+    display: flex;
+    flex-direction: column !important;
+    justify-content: space-around;
+    color: #350065;
+   
+}
+
+.b1-btn {
+    background-color: #350065 !important;
+    border: none !important;
+}
+
+.b2-btn{
+    background-color: transparent !important;
+    border-color: #350065 !important;
+    color: #350065 !important;
+}
+
+.cep {
+    width: 80% !important;
+}
