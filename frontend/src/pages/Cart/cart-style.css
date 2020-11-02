@@ -1,0 +1,42 @@
+.body-cart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    place-items: center;
+    margin: 2%;
+    color: #350065;
+
+}
+
+.body-cart h2 {
+}
+
+.cart-card{
+    width: 70%;
+    height: 10rem;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1%;
+    
+}
+
+.prod-img {
+    width: 5rem;
+}
+
+.delete-btn {
+    background-color: #350065 !important;
+    border: none !important;
+}
+
+.delete-btn:hover {
+    background-color: #f3e436 !important;
+}
+
+.finish-btn {
+    background-color: #350065 !important;
+    border: none !important;
+    width: 20%;
+}
