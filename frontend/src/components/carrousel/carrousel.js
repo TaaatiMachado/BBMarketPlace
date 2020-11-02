@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import Produto from '../../pages/Products';
-import './style.css'
+import './carousel-style.css'
 
 export default () => (
     <Carousel>

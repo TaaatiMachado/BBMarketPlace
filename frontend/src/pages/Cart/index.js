@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css'
+import './cart-style.css'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import {MdDelete} from 'react-icons/md'

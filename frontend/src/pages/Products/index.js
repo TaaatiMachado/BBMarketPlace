@@ -2,7 +2,7 @@ import React from 'react';
 import {MdAddShoppingCart} from 'react-icons/md'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import './style.css'
+import './prod-style.css'
 
 export default function Produto() {
   return (

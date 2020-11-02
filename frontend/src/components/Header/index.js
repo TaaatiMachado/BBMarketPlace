@@ -10,7 +10,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge'
-import './style.css'
+import './header-style.css'
 import CadastroCli from '../../pages/CadastroCli';
 
 
