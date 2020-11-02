@@ -1,14 +1,14 @@
 import React from 'react';
-import { LoginForm, TitleInput, LoginTitle,LoginWrapper, LoginInput, LoginButton, LoginField, LoginError } from './styles';
+import { LoginForm, LoginTitle, TitleInput, LoginWrapper, LoginInput, LoginButton, LoginField, LoginError } from './styles';
 
-export default function Login() {
-    return (
+export default function LoginSupplier() {
+    return(
         <LoginWrapper>
             <LoginForm>
-                <LoginTitle>Login</LoginTitle>
-                <TitleInput>Email:</TitleInput>
-                <label htmlfor="email"></label>
-                <LoginInput type="text" name="email"></LoginInput>
+                <LoginTitle>Login fornecedor</LoginTitle>
+                <TitleInput>CNPJ:</TitleInput>
+                <label htmlfor="cnpj"></label>
+                <LoginInput type="text" name="cnpj"></LoginInput>
                 <TitleInput>Senha:</TitleInput>
                 <label htmlfor="senha"></label>
                 <LoginInput type="text" name="senha"></LoginInput>
@@ -20,10 +20,9 @@ export default function Login() {
                 </LoginField>
                 <LoginButton type="submit">Entrar</LoginButton>
                 <LoginError>
-                    <p>Email ou senha inválida!</p>
+                    <p>CNPJ ou senha inválida!</p>
                 </LoginError>
             </LoginForm>
         </LoginWrapper>
-        
     )
-};
+}

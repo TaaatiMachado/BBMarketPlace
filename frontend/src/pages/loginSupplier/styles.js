@@ -16,7 +16,6 @@ export const LoginTitle = styled.h2`
     font-family: 'Roboto Condensed', sans-serif;
     margin-bottom: 30px;
 `;
-
 export const LoginForm = styled.form`
     width: 100%;
     max-width: 700px;
