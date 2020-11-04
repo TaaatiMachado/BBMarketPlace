@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const initialState = {
+    email:'',
+    senha:''
+};
+
 export const LoginWrapper = styled.div`
     display: flex;
     justify-content: center;
@@ -9,7 +14,7 @@ export const LoginWrapper = styled.div`
 
 export const TitleInput = styled.p`
     font-family: 'Roboto Condensed', sans-serif;
-    margin-bottom: -30px;
+    margin-bottom: 10px;
 `;
 
 export const LoginTitle = styled.h2`
