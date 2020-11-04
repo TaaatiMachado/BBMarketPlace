@@ -1,17 +1,55 @@
-import React from 'react';
-import { LoginForm, LoginTitle, TitleInput, LoginWrapper, LoginInput, LoginButton, LoginField, LoginError } from './styles';
+import React, { useState } from 'react';
+import { initialState, LoginForm, LoginTitle, TitleInput, LoginWrapper, LoginInput, LoginButton, LoginField, LoginError } from './styles';
 
 export default function LoginSupplier() {
+
+    const [state, setState] = useState(initialState);
+    const [error, setError] = useState('');
+
+    const handleSubmit = (event) => {
+        console.log(state);
+        event.preventDefault();
+
+        //Validar campos vazios ||
+        while(state.senha === '' ||  state.cnpj === ''){
+            setError(`Você precisa preencher todos os campos `)
+            break;
+        }
+        while(state.senha != '' &&  state.cnpj != ''){
+            setError('')
+            break;
+        }
+        
+    }
+
+    const handleInput = (event) => {
+        const inputName = event.target.name;
+        const value = event.target.value;
+        
+        setState((ant) => (
+            { ...ant, [inputName]: value})
+        );
+    }
+
     return(
         <LoginWrapper>
-            <LoginForm>
+            <LoginForm onSubmit={handleSubmit}>
                 <LoginTitle>Login fornecedor</LoginTitle>
                 <TitleInput>CNPJ:</TitleInput>
-                <label htmlfor="cnpj"></label>
-                <LoginInput type="text" name="cnpj"></LoginInput>
+                <LoginInput 
+                    type="text" 
+                    name="cnpj"
+                    value={state.cnpj}
+                    onChange={handleInput}
+                >    
+                </LoginInput>
                 <TitleInput>Senha:</TitleInput>
-                <label htmlfor="senha"></label>
-                <LoginInput type="text" name="senha"></LoginInput>
+                <LoginInput 
+                    type="text" 
+                    name="senha"
+                    value={state.senha}
+                    onChange={handleInput}
+                ></LoginInput>
                 <LoginField>
                     <label>
                         <input type="radio"/>
@@ -19,9 +57,11 @@ export default function LoginSupplier() {
                     </label>
                 </LoginField>
                 <LoginButton type="submit">Entrar</LoginButton>
-                <LoginError>
-                    <p>CNPJ ou senha inválida!</p>
-                </LoginError>
+                {error && (
+                    <LoginError>
+                        <p>{error}</p>
+                    </LoginError>
+                )}
             </LoginForm>
         </LoginWrapper>
     )

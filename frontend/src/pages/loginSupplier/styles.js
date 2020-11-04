@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const initialState = {
+    cnpj: '',
+    senha: ''
+};
+
 export const LoginWrapper = styled.div`
     display: flex;
     justify-content: center;
