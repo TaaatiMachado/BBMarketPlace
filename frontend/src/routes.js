@@ -10,6 +10,8 @@ import CadastroProd from './pages/CadastroProd'
 import EditCli from './pages/EditCli'
 import EditFor from './pages/EditFor'
 import ProdDetalhes from './pages/ProdDetalhes'
+import LoggedCli from './pages/LoggedCli'
+import LoggedFor from './pages/LoggedFor'
 
 export default function Routes() {
     return (
@@ -24,6 +26,8 @@ export default function Routes() {
             <Route path="/editCli" component={EditCli}/>
             <Route path="/EditFor" component={EditFor}/>
             <Route path="/prodDetalhes" component={ProdDetalhes}/>
+            <Route path="/loggedCli" component={LoggedCli}/>
+            <Route path="/loggedFor" component={LoggedFor}/>
         </Switch>
     );
 

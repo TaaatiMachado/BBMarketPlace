@@ -6,7 +6,13 @@
     padding: 1%;
 }
 
-.buy-btn {
+.edit-btn {
     background-color: #350065 !important;
     border: none !important;
+}
+
+.remove-btn {
+    background-color: transparent !important;
+    border-color: #350065 !important;
+    color: #350065 !important;
 }
