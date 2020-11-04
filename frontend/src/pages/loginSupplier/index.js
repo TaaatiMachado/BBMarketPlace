@@ -5,7 +5,7 @@ export default function LoginSupplier() {
     return(
         <LoginWrapper>
             <LoginForm>
-                <LoginTitle>Login fornecedor</LoginTitle>
+                <LoginTitle>Login Fornecedor</LoginTitle>
                 <TitleInput>CNPJ:</TitleInput>
                 <label htmlfor="cnpj"></label>
                 <LoginInput type="text" name="cnpj"></LoginInput>
@@ -14,7 +14,7 @@ export default function LoginSupplier() {
                 <LoginInput type="text" name="senha"></LoginInput>
                 <LoginField>
                     <label>
-                        <input type="radio"/>
+                        <input className="mr-2" type="checkbox"/>
                         Mantenha-me conectado
                     </label>
                 </LoginField>

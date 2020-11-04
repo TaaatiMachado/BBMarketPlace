@@ -53,7 +53,7 @@ export default function Login() {
                 <LoginInput type="text" name="senha"></LoginInput>
                 <LoginField>
                     <label>
-                        <input type="radio"/>
+                        <input className="mr-2" type="checkbox"/>
                         Mantenha-me conectado
                     </label>
                 </LoginField>

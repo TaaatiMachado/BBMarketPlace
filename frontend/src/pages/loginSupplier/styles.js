@@ -5,6 +5,7 @@ export const LoginWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0px 10px;
+    margin: 5%;
 `;
 
 export const TitleInput = styled.p`
@@ -15,6 +16,7 @@ export const TitleInput = styled.p`
 export const LoginTitle = styled.h2`
     font-family: 'Roboto Condensed', sans-serif;
     margin-bottom: 30px;
+    color: #350065
 `;
 export const LoginForm = styled.form`
     width: 100%;
@@ -50,6 +52,7 @@ export const LoginButton = styled.button`
     padding: 0px 20px;
     cursor: pointer;
     box-sizing: border-box;
+    color: #FFF;
 `;
 
 export const LoginField = styled.fieldset`
