@@ -20,11 +20,11 @@ export default function Header() {
       <Nav className="d-flex justify-content-between align-items-center navBar" variant="pills">
         <Nav.Item>
           <Nav.Link eventKey="home" className="ml-5 navLogo" href="/">
-            <img className="logo" src={logo} alt="Logo"/>
+            <img className="logo-bnn" src={logo} alt="Logo"/>
           </Nav.Link>
         </Nav.Item>
         <div className="d-flex align-items-center">
-          <Button variant="outline-light" className="btn-mkt" href="/cart"><MdShoppingBasket size={30} color="#fff"/> <Badge variant="danger">9</Badge></Button>
+          <Button variant="outline-light" className="btn-mkt" href="/cart"><MdShoppingBasket size={30} color="#fff"/> <Badge variant="danger">3</Badge></Button>
           <Dropdown>
             <Dropdown.Toggle className="login btn-mkt" id="dropdown-basic">
             <MdAccountBox size={30} color="#fff"/>

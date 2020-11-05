@@ -24,7 +24,7 @@ body {
 
 .banner {
     width: 100%;
-    padding: 0.8% 5%;
+    
 }
 
 
@@ -62,4 +62,9 @@ body {
 .carousel .carousel-slider {
     align-items: center;
     justify-content: center;
+}
+
+.logo {
+    width: 15rem;
+    border-radius: 300px;
 }

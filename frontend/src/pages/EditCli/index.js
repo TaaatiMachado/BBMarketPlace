@@ -90,7 +90,7 @@ export default function EditCli() {
           </Form.Group>
       </Form>
       <div className="d-flex align-items-center justify-content-center flex-column">
-          <Button className="btn-lg mb-2 mt-3 card-btn" type="submit">
+          <Button className="btn-lg mb-2 mt-3 card-btn" type="submit" href="/loggedCli">
             Salvar alterações
           </Button>
           

@@ -64,7 +64,7 @@ export default function CadastroProd() {
       
       
       <div className="d-flex align-items-center justify-content-center flex-column">
-          <Button className="btn-lg mb-2 mt-3 cad-btn" type="submit">
+          <Button className="btn-lg mb-2 mt-3 cad-btn" type="submit" href="/loggedFor">
             Publicar produto
           </Button>
 

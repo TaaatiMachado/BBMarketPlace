@@ -33,7 +33,7 @@ export default function LoggedCli() {
               </Form.Row>
             </Form>
             <Dropdown.Divider />
-            <Button className="b2-btn" href="#"  size="lg" block> <MdAddShoppingCart/> Ir para o carrinho</Button>
+            <Button className="b2-btn" href="/cart" size="lg" block> <MdAddShoppingCart/> Ir para o carrinho</Button>
           </Card.Body>
         </Card>
 

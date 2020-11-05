@@ -1,12 +1,13 @@
 .prod {
     width: '8rem';
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column !important;
-    padding: 1%;
+
 }
 
 .buy-btn {
     background-color: #350065 !important;
     border: none !important;
+}
+
+.img-prd {
+    width: 15rem !important;
 }
