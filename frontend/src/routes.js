@@ -13,6 +13,8 @@ import ProdDetalhes from './pages/ProdDetalhes'
 import LoggedCli from './pages/LoggedCli'
 import LoggedFor from './pages/LoggedFor'
 import Sucesso from './pages/Sucesso'
+import Reset from './pages/ResetSenha'
+
 
 export default function Routes() {
     return (
@@ -30,6 +32,8 @@ export default function Routes() {
             <Route path="/loggedCli" component={LoggedCli}/>
             <Route path="/loggedFor" component={LoggedFor}/>
             <Route path="/sucesso" component={Sucesso}/>
+            <Route path="/reset" component={Reset}/>
+
         </Switch>
     );
 

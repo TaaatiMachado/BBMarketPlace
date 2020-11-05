@@ -10,7 +10,7 @@ import './s-style.css'
 
 export default function Sucesso() {
   return (
-
+    <div className="d-body">
       <Card className="d-flex flex-column align-items-center m-5">
         <Card className="d-flex align-items-center flex-column p-3 m-5 prod-card">
           <Card.Img className="pr-img" src="https://d3o3bdzeq5san1.cloudfront.net/155/154677.svg" />
@@ -23,12 +23,12 @@ export default function Sucesso() {
               <h4>
               Obrigado por escolher a Banana Banana!
               </h4>
-              <Button className="b2-btn block btn-lg mt-5 mb-2" href="/">VOLTAR PARA A HOME </Button>
+              <Button className="b2-btn block btn-lg mt-5 mb-2">VOLTAR PARA A HOME </Button>
               <small><a href="#">Polítiva de troca e devolução</a></small>
             </Card.Body>
         </Card>
     </Card>
-
+  </div>
   )
 };
 
