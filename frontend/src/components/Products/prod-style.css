@@ -1,9 +1,6 @@
 .prod {
     width: '8rem';
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column !important;
-    padding: 1%;
+
 }
 
 .buy-btn {

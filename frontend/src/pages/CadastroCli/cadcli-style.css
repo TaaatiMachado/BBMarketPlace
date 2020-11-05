@@ -1,31 +1,7 @@
-.card-body {
-    margin: 1% 5%;
-    width: 90%;
-    
-}
 
-div h3 {
-    margin: 1% 5%;
-}
 
-.cad-btn {
+.card-btn {
     background-color: #350065 !important;
     border: none !important;
-    width: 25%;
-}
-
-.cad-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.fcont{
-    margin-top: 1rem;
-}
-
-.user {
-    display: flex;
-    flex-direction: row;
+    min-width: 50%;
 }

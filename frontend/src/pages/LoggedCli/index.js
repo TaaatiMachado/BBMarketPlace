@@ -11,11 +11,11 @@ import Carousel from '../../components/carrousel-cli/carrousel'
 
 export default function LoggedCli() {
   return (
-    <div className="d-body">
-      <Card className="card-body">
-      <Card className='mr-3 align-items-center'>
+    <div className="align-items-center justify-content-center">
+      <Card className="d-flex flex-row align-items-start m-5">
+      <Card className='mr-3 align-items-center m-5'>
         <Card.Img className="cli-img m-2 mt-3" src={logo} />
-          <Card.Body className="cli-card">
+          <Card.Body className="d-flex flex-column justify-content-start m-5 cli-card">
             <Card.Title>Bem-vindo de volta :)</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">[Nome do Cliente]</Card.Subtitle>
             <Dropdown.Divider />
@@ -37,9 +37,9 @@ export default function LoggedCli() {
           </Card.Body>
         </Card>
 
-        <Card className="home-card">
+        <Card className="m-5 home-card">
             <img className="banner mt-3" src={Banner} alt="banner"></img>
-            <Card.Body className="cli-card">
+            <Card.Body className="d-flex flex-column justify-content-start cli-card">
               <Card.Title>Oi, [Nome do cliente]</Card.Title>
               <Card.Subtitle  className="mb-5 text-muted">
               Aqui estão algumas sugestões:

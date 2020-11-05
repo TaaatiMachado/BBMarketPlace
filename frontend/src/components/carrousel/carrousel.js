@@ -1,11 +1,10 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import Produto from '../../pages/Products';
-import './carousel-style.css'
 
 export default () => (
     <Carousel>
-        <div className="p-list">
+        <div className="d-flex">
             <Produto />
             <Produto />
             <Produto />
@@ -13,7 +12,7 @@ export default () => (
             <Produto />
 
         </div>
-        <div className="p-list">
+        <div className="d-flex">
             <Produto />
             <Produto />
             <Produto />
@@ -21,7 +20,7 @@ export default () => (
             <Produto />
 
         </div>
-        <div className="p-list">
+        <div className="d-flex">
             <Produto />
             <Produto />
             <Produto />

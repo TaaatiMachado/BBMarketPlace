@@ -1,8 +1,5 @@
 
 .navBar {
-display:flex;
-justify-content: space-between;
-align-items: center;
 background-color: #350065;
 width: 100%;
 padding: 0 45px;
@@ -10,7 +7,6 @@ padding: 0 45px;
 
 .navLogo {
     background-color: #350065 !important;
-    margin-left: 45px;
 
 }
 
@@ -26,10 +22,6 @@ padding: 0 45px;
     background-color: #350065 !important;
 }
 
-.menu{
-display:flex;
-align-items: center;
-}
 
 .btn-mkt {
     margin-right: 10px;

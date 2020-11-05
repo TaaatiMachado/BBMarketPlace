@@ -10,8 +10,8 @@ import './cadfor-style.css'
 export default function CadastroFor() {
   return (
     <div>
-      <h3> Cadastre-se e comece a vender agora mesmo! </h3>
-      <Card className="card-body">
+      <h3 className="m-4 ml-5"> Cadastre-se e comece a vender agora mesmo! </h3>
+      <Card className="m-2 flex-column align-items-center ml-5 mr-5 p-5">
         <Form>
           <Row>
             <Col>
@@ -25,7 +25,7 @@ export default function CadastroFor() {
           <Form.Group controlId="formBasicEmail">
             <Row>
               <Col>
-                <Form.Control className="fcont"type="email" placeholder="E-mail" />
+                <Form.Control className="mt-2" type="email" placeholder="E-mail" />
               </Col>
             </Row>  
           </Form.Group>
@@ -90,12 +90,12 @@ export default function CadastroFor() {
 
           </Form.Group>
       </Form>
-      <div className="cad-form">
-          <Button className="cad-btn" type="submit">
+      <div className="d-flex align-items-center justify-content-center flex-column">
+          <Button className="btn-lg mb-2 mt-3 card-btn" type="submit" href="/loggedFor">
             Criar seu cadastro
           </Button>
-          <div className="user">
-            <p>Já tem um cadastro?</p>   <a href="#">Entrar</a>
+          <div className="d-flex flex-row">
+            <p>Já tem um cadastro?</p>   <a href="/loginFor">Entrar</a>
           </div>
         <small>Ao continuar com o acesso, você concorda com a nossa Política de Vendas e Privacidade.</small>
       </div>

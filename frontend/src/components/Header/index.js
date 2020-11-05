@@ -11,34 +11,31 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge'
 import './header-style.css'
-import CadastroCli from '../../pages/CadastroCli';
 
 
 //Header da pagina 
 export default function Header() {
 
-    const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
-
     return (
-      <Nav className="navBar" variant="pills" activeKey="1" onSelect={handleSelect}>
+      <Nav className="d-flex justify-content-between align-items-center navBar" variant="pills">
         <Nav.Item>
-          <Nav.Link eventKey="home" className="navLogo" href="#/home">
+          <Nav.Link eventKey="home" className="ml-5 navLogo" href="/">
             <img className="logo" src={logo} alt="Logo"/>
           </Nav.Link>
         </Nav.Item>
-        <div className="menu">
-          <Button variant="outline-light" className="btn-mkt"><MdShoppingBasket size={30} color="#fff"/> <Badge variant="danger">9</Badge></Button>
+        <div className="d-flex align-items-center">
+          <Button variant="outline-light" className="btn-mkt" href="/cart"><MdShoppingBasket size={30} color="#fff"/> <Badge variant="danger">9</Badge></Button>
           <Dropdown>
             <Dropdown.Toggle className="login btn-mkt" id="dropdown-basic">
             <MdAccountBox size={30} color="#fff"/>
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1"><MdFingerprint size={25} color="#350065"/> Log in</Dropdown.Item>
+              <Dropdown.Item href="/login"><MdFingerprint size={25} color="#350065"/> Log in</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item href="#/action-2"><MdPerson size={25} color="#350065"/>Quero comprar</Dropdown.Item>
-              <Dropdown.Item href="#/action-2"><MdAttachMoney size={25} color="#350065"/>Quero vender  </Dropdown.Item>
+              <Dropdown.Item href="/cadastroCli"><MdPerson size={25} color="#350065"/>Quero comprar</Dropdown.Item>
+              <Dropdown.Item href="/cadastroFor"><MdAttachMoney size={25} color="#350065"/>Quero vender  </Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3"><MdSentimentDissatisfied size={25} color="#350065"/> Esqueci minha senha </Dropdown.Item>
+              <Dropdown.Item href="/reset"><MdSentimentDissatisfied size={25} color="#350065"/> Esqueci minha senha </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>

@@ -1,20 +1,4 @@
-.card-body {
-    width: 90%;
-    display: flex;
-    flex-direction: row ;
-    align-items: flex-start;
-}
 
-
-div h3 {
-    margin: 1% 5%;
-}
-
-.cad-btn {
-    background-color: #350065 !important;
-    border: none !important;
-    width: 25%;
-}
 
 .prod-card{
     display: flex;
@@ -29,28 +13,6 @@ div h3 {
 
 }
 
-.cli-img {
-    width: 18rem !important;
-    border-radius: 300% !important;
-}
-
-.fcont{
-    margin-top: 1rem;
-}
-
-.user {
-    display: flex;
-    flex-direction: row;
-}
-
-.cli-card{
-    display: flex;
-    flex-direction: column !important;
-    justify-content: flex-start;
-    color: #350065;
-   
-}
-
 .b1-btn {
     background-color: #350065 !important;
     border: none !important;
@@ -62,6 +24,3 @@ div h3 {
     color: #350065 !important;
 }
 
-.prod {
-    margin-bottom: 5%;  
-}

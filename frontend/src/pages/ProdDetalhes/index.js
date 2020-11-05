@@ -1,10 +1,9 @@
 import React from 'react';
 import {MdAddShoppingCart} from 'react-icons/md'
+import {MdStar} from 'react-icons/md'
+import {MdStarHalf} from 'react-icons/md'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Form from 'react-bootstrap/Form'
-import Col from 'react-bootstrap/Row'
-import InputGroup from 'react-bootstrap/InputGroup'
-import FormControl from 'react-bootstrap/FormControl'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './PDstyle.css'
@@ -12,11 +11,12 @@ import './PDstyle.css'
 export default function ProdDetalhes() {
   return (
     <div className="d-body">
-      <Card className="card-body">
-        <Card className="prod-card">
-          <Card.Img className="prod-img" src="https://static.netshoes.com.br/produtos/fone-de-ouvido-bluetooth-jbl-tune-500bt/06/N26-0303-006/N26-0303-006_zoom2.jpg?ts=1587489105&ims=326x" />
+      <Card className="d-flex flex-row m-5">
+        <Card className="d-flex align-items-start flex-row p-3 m-5 prod-card">
+          <Card.Img className="pr-img" src="https://static.netshoes.com.br/produtos/fone-de-ouvido-bluetooth-jbl-tune-500bt/06/N26-0303-006/N26-0303-006_zoom2.jpg?ts=1587489105&ims=326x" />
             <Card.Body className="buy-card">
               <Card.Title>Fone JBL</Card.Title>
+              <Card.Title><MdStar/><MdStar/><MdStar/><MdStar/><MdStarHalf/></Card.Title>
               <Card.Subtitle  className="mb-2 text-muted">
               Os Fones JBL TUNE500BT permitem-lhe transmitir um som potente e com exelente qualidade durante 16 horas de puro prazer. 
               Fácil de usar e equipado com drivers JBL de 32 mm e som JBL Pure Bass, esses fones de ouvido proporcionam fácil acesso a um excelente som.
@@ -25,8 +25,8 @@ export default function ProdDetalhes() {
             </Card.Body>
         </Card>
 
-        <Card >
-          <Card.Body className="buy-card">
+        <Card className="m-5">
+          <Card.Body className="d-flex flex-column m-2 justify-content-around buy-card">
             <Card.Title>R$ 249,90</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">ou em até 12x sem juros no cartão de crédito</Card.Subtitle>
             <Dropdown.Divider />

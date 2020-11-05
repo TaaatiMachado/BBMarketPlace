@@ -1,12 +1,8 @@
 .container-foot {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     background: #350065;
     color: #f3e436;
     width: 100%;
     bottom: 0;
-    padding: 15px;
 }
 
 .bnn {

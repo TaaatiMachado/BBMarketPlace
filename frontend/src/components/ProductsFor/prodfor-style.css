@@ -1,9 +1,6 @@
 .prod {
-    width: '8rem';
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column !important;
-    padding: 1%;
+    width: '10rem' !important;
+   
 }
 
 .edit-btn {
@@ -15,4 +12,8 @@
     background-color: transparent !important;
     border-color: #350065 !important;
     color: #350065 !important;
+}
+
+.prod-img {
+    width: 15rem !important;
 }

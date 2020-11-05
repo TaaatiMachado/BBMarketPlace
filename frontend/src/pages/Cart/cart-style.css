@@ -1,9 +1,4 @@
 .body-cart {
-    display: flex;
-    justify-content: center ;
-    flex-direction: column;
-    place-items: center ;
-    margin: 2%;
     color: #350065;
 
 }
@@ -11,11 +6,7 @@
 .cart-card{
     width: 70%;
     height: 8rem;
-    display: flex;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-around;
-    margin: 1%;
+
     
 }
 

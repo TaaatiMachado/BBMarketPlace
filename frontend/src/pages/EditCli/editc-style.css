@@ -1,12 +1,3 @@
-.card-body {
-    margin: 1% 5%;
-    width: 90%;
-    
-}
-
-div h3 {
-    margin: 1% 5%;
-}
 
 .cad-btn {
     background-color: #350065 !important;
@@ -14,18 +5,3 @@ div h3 {
     width: 25%;
 }
 
-.cad-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.fcont{
-    margin-top: 1rem;
-}
-
-.user {
-    display: flex;
-    flex-direction: row;
-}

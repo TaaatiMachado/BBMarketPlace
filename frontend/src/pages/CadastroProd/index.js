@@ -1,5 +1,4 @@
 import React from 'react';
-import {MdAddShoppingCart} from 'react-icons/md'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
@@ -10,8 +9,8 @@ import './cadprod-style.css'
 export default function CadastroProd() {
   return (
     <div>
-      <h3> Cadastre seus produtos! </h3>
-      <Card className="card-body">
+      <h3 className="m-4 ml-5"> Cadastre seus produtos! </h3>
+      <Card className="m-2 flex-column align-items-center ml-5 mr-5 p-5">
         <Form>
           <Form.Group>
           <Row>
@@ -64,8 +63,8 @@ export default function CadastroProd() {
       </Form>
       
       
-      <div className="cad-form">
-          <Button className="cad-btn" type="submit">
+      <div className="d-flex align-items-center justify-content-center flex-column">
+          <Button className="btn-lg mb-2 mt-3 cad-btn" type="submit">
             Publicar produto
           </Button>
 
